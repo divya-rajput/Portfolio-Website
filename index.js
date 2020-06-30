@@ -39,7 +39,7 @@ app.use("*", (req, res) => {
   Port setup
 */
 let PORT = 3000;
-if (process.env.PORT == "") {
+if (process.env.PORT != "") {
   PORT = parseInt(process.env.PORT);
 }
 
