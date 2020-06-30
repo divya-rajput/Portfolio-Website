@@ -1,7 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const compression = require("compression")
 const morgan = require('morgan')
 const path = require("path");
+const {worker} = require("./js/keepalive");
 
 const app = express();
 
@@ -9,6 +11,7 @@ const app = express();
   All the middlewares
 */
 app.use(morgan("tiny"));
+app.use(compression())
 app.use(bodyParser.json({ extended: true }));
 app.use(function (err, req, res, next) {
   console.error(err.stack)
@@ -36,13 +39,18 @@ app.use("*", (req, res) => {
 });
 
 /*
-  Port setup
+  ENV and worker setup
 */
 let PORT = 3000;
-if (process.env.PORT != "") {
+if (process.env.PORT) {
   PORT = parseInt(process.env.PORT);
 }
 
+worker();
+
+/*
+  Starting the server
+*/
 app.listen(PORT, err => {
   if (err) {
     console.error("Could not start server: ", err);

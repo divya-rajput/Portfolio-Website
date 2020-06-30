@@ -1,0 +1,35 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homepage__image-wrapper {
+    display: flex;
+    padding: 5vh;
+    align-items: center;
+    height: 100vh;
+}
+
+.homepage__image-wrapper img {
+    border-radius: 2rem;
+    box-shadow: 0 0 0.8rem 0.3rem rgba(0, 0, 0, 0.3);
+    filter: grayscale(0.2);
+    transition: all ease-in 200ms;
+    max-height: 95%;
+}
+
+.homepage__image-wrapper img:hover {
+    filter: grayscale(0);
+    border-radius: 2rem;
+    transform: scale(1.05);
+    box-shadow: 0 0 8px 3px rgba(0, 0, 0, 0.15);
+}
