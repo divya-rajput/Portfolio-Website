@@ -1,0 +1,25 @@
+{
+  "name": "divya-porfolio",
+  "version": "1.0.0",
+  "description": "Source code for porfolio website",
+  "main": "index.js",
+  "scripts": {
+    "release": "node index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://divya-rajput@github.com/divya-rajput/Portfolio-Website.git"
+  },
+  "author": "Divya Rajput <divya.rajput8220@gmail.com>",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/divya-rajput/Portfolio-Website/issues"
+  },
+  "homepage": "https://github.com/divya-rajput/Portfolio-Website#readme",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "morgan": "^1.10.0"
+  }
+}
